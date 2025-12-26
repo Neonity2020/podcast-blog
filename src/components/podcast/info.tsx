@@ -44,6 +44,10 @@ function PodcastInfoDesktop({ podcastInfo }: PodcastInfoContentProps) {
     displayDescription = `${description.slice(0, site.defaultDescriptionLength)}...`
   }
 
+  if (!cover) {
+    return null
+  }
+
   return (
     <div className={cn('hidden md:flex', 'h-full flex-col gap-12 p-12')}>
       <CardContainer
@@ -155,6 +159,10 @@ function PodcastInfoDesktop({ podcastInfo }: PodcastInfoContentProps) {
 
 function PodcastInfoMobile({ podcastInfo }: PodcastInfoContentProps) {
   const { title, description, cover } = podcastInfo
+
+  if (!cover) {
+    return null
+  }
 
   return (
     <div className='relative flex flex-col items-center gap-8 md:hidden'>

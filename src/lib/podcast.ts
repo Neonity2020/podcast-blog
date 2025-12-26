@@ -10,6 +10,7 @@ import type { Episode, PodcastRSSInfo } from '@/types/podcast'
  */
 export const getPodcast = createServerFn({ method: 'GET' }).handler(
   async (): Promise<PodcastRSSInfo> => {
+    console.log('[getPodcast] Fetching RSS from:', env.VITE_PODCAST_RSS)
     const response = await fetch(env.VITE_PODCAST_RSS)
     const xmlData = await response.text()
 
@@ -20,14 +21,32 @@ export const getPodcast = createServerFn({ method: 'GET' }).handler(
     const result = parser.parse(xmlData)
 
     const channel = result.rss?.channel || result.feed
+
+    if (!channel) {
+      console.log('[getPodcast] No channel found in RSS')
+      return {
+        title: '',
+        description: '',
+        link: '',
+        cover: '',
+      }
+    }
+
     const image = channel.image?.url || channel['itunes:image']?.['@_href']
 
-    return {
+    const podcastInfo = {
       title: channel.title || '',
       description: channel.description || '',
       link: channel.link || '',
       cover: image || '',
     }
+
+    console.log('[getPodcast] Parsed podcast info:', {
+      title: podcastInfo.title,
+      cover: podcastInfo.cover,
+    })
+
+    return podcastInfo
   },
 )
 

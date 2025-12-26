@@ -12,13 +12,10 @@ export function LanguageProvider({
   children,
   language,
 }: LanguageProviderProps) {
-  useEffect(() => {
-    if (typeof window !== 'undefined' && language) {
-      if (isValidLocale(language)) {
-        i18n.changeLanguage(language)
-      }
-    }
-  }, [language])
+  // Initialize language synchronously to avoid hydration mismatch
+  if (language && isValidLocale(language) && i18n.language !== language) {
+    i18n.changeLanguage(language)
+  }
 
   useEffect(() => {
     if (typeof window !== 'undefined') {

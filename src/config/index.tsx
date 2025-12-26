@@ -11,13 +11,15 @@ export const site: Site = {
   themeColor: 'blue', // blue, pink, purple, green, yellow, orange, red
   pageSize: 10,
   defaultDescriptionLength: 120,
-  favicon: 'https://files.guoqi.dev/podcast-favicon.ico',
+  favicon:
+    'https://neopic2026.oss-cn-beijing.aliyuncs.com/test/Adobe%20Express%20-%20file.png',
   seo: {
-    siteName: '整点薯条吧',
-    defaultTitle: '整点薯条吧',
-    defaultDescription: '人生的意义就是去码头整点薯条',
-    defaultImage: 'https://files.guoqi.dev/podcast_og.png',
-    twitterHandle: '@sun0225SUN',
+    siteName: 'NeoMatrix',
+    defaultTitle: 'NeoMatrix - 新矩阵',
+    defaultDescription: '一个关于技术、生活与成长的播客节目。',
+    defaultImage:
+      'https://neopic2026.oss-cn-beijing.aliyuncs.com/test/Adobe%20Express%20-%20file.png',
+    twitterHandle: '@neonity',
     locale: 'zh_CN',
   },
 }
@@ -31,25 +33,25 @@ export const podcast: Podcast = {
   base: {
     title: '',
     description: '',
-    link: 'https://shutiao.life',
+    link: 'https://podcast-blog.neonity.cc',
     cover: '',
   },
   hosts: [
     {
-      name: 'Guoqi Sun',
-      link: 'https://guoqi.dev',
+      name: 'Neonity',
+      link: 'https://neonity.cc',
     },
   ],
   platforms: [
     {
       name: '小宇宙',
-      link: 'https://www.xiaoyuzhoufm.com/podcast/676b92c1e63173b1783c08b7',
+      link: 'https://www.xiaoyuzhoufm.com/podcast/6375ba25f78beaeec3a444f0',
       icon: XYZIcon,
       colorClass: 'text-blue-500 hover:text-blue-600',
     },
     {
       name: 'Podcasts',
-      link: 'https://podcasts.apple.com/cn/podcast/%E6%95%B4%E7%82%B9%E8%96%AF%E6%9D%A1%E5%90%A7/id1782625327',
+      link: 'https://podcasts.apple.com/cn/podcast/neonity',
       icon: PodcastIcon,
       colorClass: 'text-purple-500 hover:text-purple-600',
     },
@@ -61,19 +63,19 @@ export const podcast: Podcast = {
     },
     {
       name: 'Bilibili',
-      link: 'https://space.bilibili.com/448488855',
+      link: 'https://space.bilibili.com/10817325',
       icon: BilibiliIcon,
       colorClass: 'text-blue-500 hover:text-blue-600',
     },
     {
       name: 'YouTube',
-      link: 'https://www.youtube.com/@sun0225SUN',
+      link: 'https://www.youtube.com/@neonity2025',
       icon: Youtube,
       colorClass: 'text-red-500 hover:text-red-600',
     },
     {
       name: 'RSS',
-      link: 'https://feed.xyzfm.space/eemhg343b8gj',
+      link: 'https://feed.xyzfm.space/7duqlaufpkey',
       icon: RssIcon,
       colorClass: 'text-orange-500 hover:text-orange-600',
     },
